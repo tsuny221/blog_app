@@ -1,0 +1,14 @@
+.blog__main__bg
+  = image_tag @blog.image, class: "blog__img"
+.blog__show
+  .container
+        .row
+          h2.text-center.section__title
+            = @blog.title
+          p.date__txt.text-center
+            = @blog.created_at
+            |　
+            = link_to root_path, class:"category__txt" do
+                = @blog.tag
+          .blog__cont
+            == @blog.content

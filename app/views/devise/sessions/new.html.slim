@@ -1,0 +1,21 @@
+.container
+  .row.page_space
+    .form
+      h2.text-center.section__title blog
+      .form__cont
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            = f.label :email, "メールアドレス", class: "form__label standard__txt"
+            br
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "form__item_input"
+          .field
+            = f.label :password, "パスワード", class: "form__label standard__txt"
+            br
+            = f.password_field :password, autocomplete: "current-password", class: "form__item_input"
+          - if devise_mapping.rememberable?
+            .field
+              = f.check_box :remember_me
+              = f.label :remember_me, class:"standard__txt"
+          .actions
+            = f.submit "ログイン", class: "form__btn"
+        = render "devise/shared/links"

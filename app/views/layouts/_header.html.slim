@@ -1,0 +1,15 @@
+header
+  .header__wrap
+    .header__flex
+      .header-left
+        .logo
+          = image_tag asset_path("logo.png"), class: "logo__img"
+      .header-right
+        nav.header__nav
+          ul.nav__flex
+            li.header__nav__list
+                = link_to 'about', root_path, class:"header__nav__list__link"
+            li.header__nav__list
+                = link_to 'blog', blogs_path, class:"header__nav__list__link"
+            li.header__nav__list
+                = link_to 'contact', root_path, class:"header__nav__list__link"

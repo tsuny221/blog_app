@@ -15,3 +15,263 @@
  */
 @import "bootstrap-sprockets"; /*ここを追加*/
 @import "bootstrap"; /*ここを追加*/
+@import "froala_editor.min";
+@import "froala_style.min";
+@import "plugins/char_counter.min.css";
+@import "plugins/code_view.min.css";
+@import "plugins/colors.min.css";
+@import "plugins/emoticons.min.css";
+@import "plugins/file.min.css";
+@import "plugins/fullscreen.min.css";
+@import "plugins/image_manager.min.css";
+@import "plugins/image.min.css";
+@import "plugins/line_breaker.min.css";
+@import "plugins/quick_insert.min.css";
+@import "plugins/table.min.css";
+@import "plugins/video.min.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  color: #333;
+  font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体",
+    "YuGothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ",
+    "Meiryo", "verdana", sans-serif;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  color: #5c6567;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+section {
+  margin: 5%;
+}
+.standard__txt {
+  font-size: 1em;
+  font-weight: normal;
+  letter-spacing: 0.15em;
+}
+/*-----header-------*/
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+}
+.header__wrap {
+  width: 90%;
+  margin: 0 auto;
+}
+.logo__img {
+  width: 100px;
+  margin: 10px;
+}
+.header__flex {
+  display: flex;
+  justify-content: space-between;
+}
+.nav__flex {
+  display: flex;
+  justify-content: space-around;
+}
+.header__nav__list {
+  margin-right: 30px;
+  margin-top: 50px;
+}
+.header__nav__list:nth-child(3) {
+  margin-right: 20px;
+}
+/*-----footer-------*/
+.footer__txt {
+  margin-right: 20px;
+}
+
+/*-------main--------*/
+
+/*-----main-visual-------*/
+
+.slide {
+  width: 100%;
+  height: auto;
+}
+.slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+.section__title {
+  font-size: 1.5em;
+  font-weight: normal;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  position: relative;
+}
+.section__title:before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+  display: block;
+  margin: auto;
+  width: 50px;
+  height: 1px;
+  background-color: #000;
+}
+
+/*-----blog-------*/
+.blog .container {
+  max-width: 1000px;
+}
+.blog__card__flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card {
+  width: 20rem;
+  margin: 20px;
+}
+.blog__card__img {
+  width: 100%;
+  height: 180;
+  margin-bottom: 25px;
+}
+.card-text {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+.date__txt {
+  color: #777;
+  margin: 0px;
+}
+.category__txt {
+  color: #777;
+  margin: 0px;
+}
+.blog__index {
+  margin: 20% 0px;
+}
+.blog__show {
+  z-index: 1;
+  margin: 10% 0px;
+  background-color: #fff;
+}
+.blog__cont {
+  max-width: 1000px;
+  margin: 5%;
+}
+.blog__main__bg {
+  width: 100%;
+  height: 50vh;
+  opacity: 0.3;
+  filter: brightness(100%);
+}
+.blog__img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  margin: -10px;
+}
+/*------------フォーム全般-------------*/
+.form {
+  margin-top: 10%;
+}
+.form__cont {
+  max-width: 600px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form__midashi {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+input:focus,
+textarea:focus {
+  border: 2px solid #fffe62;
+}
+.form__label {
+  margin: 5px 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.form__item {
+  border-radius: 6px;
+  margin-right: 8px;
+  padding: 5px;
+  width: 48px;
+  display: inline-block;
+  text-align: center;
+  background: #fffe62;
+  font-size: 14px;
+}
+.form__item_input {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 10px;
+  height: 45px;
+  width: 100%;
+  background: #fff;
+  font-size: 15px;
+}
+.form__item_input_s {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  height: 45px;
+  width: 47%;
+  background: #fff;
+  font-size: 15px;
+}
+.form__item_textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 10px;
+  margin-left: 0;
+  height: 200px;
+  background: #fff;
+  font-size: 15px;
+}
+.form__item_select {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  height: 45px;
+  width: 47%;
+  background: #fff;
+  font-size: 15px;
+}
+
+.form__btn {
+  margin: 10px auto;
+  padding: 5px 50px;
+  display: block;
+}
+
+.form__btn:active {
+  border: 0px;
+}
