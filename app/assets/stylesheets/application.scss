@@ -61,6 +61,15 @@ section {
   font-weight: normal;
   letter-spacing: 0.15em;
 }
+.text_color_white {
+  color: #fff;
+}
+.text_color_brown {
+  color: #dbd1c8;
+}
+.text_size_s {
+  font-size: 15px;
+}
 /*-----header-------*/
 header {
   width: 100%;
@@ -139,6 +148,7 @@ header {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 5%;
 }
 .card {
   width: 20rem;
@@ -165,28 +175,48 @@ header {
   margin: 20% 0px;
 }
 .blog__show {
-  z-index: 1;
-  margin: 10% 0px;
-  background-color: #fff;
+  padding: 100px 0px;
 }
 .blog__cont {
-  max-width: 1000px;
-  margin: 5%;
+  width: 80%;
+  margin: 0 auto;
+}
+.blog__border {
+  content: "";
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+  border-bottom: 1px solid #a2a2a2;
 }
 .blog__main__bg {
   width: 100%;
-  height: 50vh;
-  opacity: 0.3;
-  filter: brightness(100%);
+  height: 400px;
+  opacity: 0.5;
 }
-.blog__img {
+.blog__bg {
   width: 100%;
-  height: 500px;
+  height: 100%;
   object-fit: cover;
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
-  margin: -10px;
 }
+/*------------profile-------------*/
+.profile__cont {
+  width: 70%;
+  margin: 5% auto;
+}
+.profile__img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile__txt {
+  text-align: center;
+}
+
 /*------------フォーム全般-------------*/
 .form {
   margin-top: 10%;
@@ -204,7 +234,7 @@ header {
 }
 input:focus,
 textarea:focus {
-  border: 2px solid #fffe62;
+  border: 2px solid #333;
 }
 .form__label {
   margin: 5px 0px;
@@ -274,4 +304,39 @@ textarea:focus {
 
 .form__btn:active {
   border: 0px;
+}
+/*------------------------------スマホ版-----------------------------*/
+@media (max-width: 1200px) {
+  /*------------共通-------------*/
+  .logo__img {
+    width: 50px;
+  }
+  .header__nav__list {
+    margin-top: 20px;
+  }
+  .container {
+    padding-top: 10%;
+    width: 90%;
+  }
+  .blog__show {
+    margin: -30px;
+  }
+  .blog__main__bg {
+    height: 300px;
+  }
+  /*------------profile-------------*/
+  .profile__cont {
+    width: 90%;
+    margin: 5% auto;
+  }
+  .profile__img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 }

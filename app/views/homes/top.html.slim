@@ -8,55 +8,7 @@
       .container
         .row
           h2.text-center.section__title blog
-          .blog__card__flex
-            .card
-              .card-body
-                =link_to root_path, class:"card-img-top" do
-                  = image_tag asset_path("bin.jpg"), class: "blog__card__img"
-                .card-body
-                  p.card-text
-                    = link_to root_path, class:"" do
-                      | 購入品紹介
-                  p.date__txt
-                    | 2019/09/03
-                  = link_to root_path, class:"category__txt" do
-                      | cosme
-            .card
-              .card-body
-                =link_to root_path, class:"card-img-top" do
-                  = image_tag asset_path("bin.jpg"), class: "blog__card__img"
-                .card-body
-                  p.card-text
-                    = link_to root_path, class:"" do
-                      | 購入品紹介
-                  p.date__txt
-                    | 2019/09/03
-                  = link_to root_path, class:"category__txt" do
-                      | cosme
-            .card
-              .card-body
-                =link_to root_path, class:"card-img-top" do
-                  = image_tag asset_path("bin.jpg"), class: "blog__card__img"
-                .card-body
-                  p.card-text
-                    = link_to root_path, class:"" do
-                      | 購入品紹介
-                  p.date__txt
-                    | 2019/09/03
-                  = link_to root_path, class:"category__txt" do
-                      | cosme
-            .card
-              .card-body
-                =link_to root_path, class:"card-img-top" do
-                  = image_tag asset_path("bin.jpg"), class: "blog__card__img"
-                .card-body
-                  p.card-text
-                    = link_to root_path, class:"" do
-                      | 購入品紹介
-                  p.date__txt
-                    | 2019/09/03
-                  = link_to root_path, class:"category__txt" do
-                      | cosme
+          = render 'blogs/list', blogs: @blogs
     section.contact
       .container
         .row

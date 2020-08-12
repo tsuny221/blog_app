@@ -3,13 +3,17 @@ header
     .header__flex
       .header-left
         .logo
-          = image_tag asset_path("logo.png"), class: "logo__img"
+          = link_to root_path do
+            = image_tag asset_path("logo.png"), class: "logo__img"
       .header-right
         nav.header__nav
           ul.nav__flex
             li.header__nav__list
-                = link_to 'about', root_path, class:"header__nav__list__link"
+                = link_to 'profile', homes_profile_path, class:"header__nav__list__link"
             li.header__nav__list
                 = link_to 'blog', blogs_path, class:"header__nav__list__link"
             li.header__nav__list
                 = link_to 'contact', root_path, class:"header__nav__list__link"
+            -if admin_signed_in?
+              li.header__nav__list
+                = link_to "logout", destroy_admin_session_path, method: :delete

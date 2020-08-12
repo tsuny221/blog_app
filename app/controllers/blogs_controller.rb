@@ -7,9 +7,9 @@ class BlogsController < ApplicationController
   def create
     @blog= Blog.new(blog_params)
     if @blog.save
-      redirect_to blogs_path
+      redirect_to blog_path(@blog)
     else
-    render :index
+    render :new
   end
 end
   def index
@@ -23,9 +23,9 @@ end
   def update
     @blog= Blog.find(params[:id])
     if @blog.update(blog_params)
-      redirect_to blogs_path
+      redirect_to blog_path(@blog)
     else
-    render :index
+    render :edit
   end
 end
 def show

@@ -1,14 +1,21 @@
 .blog__main__bg
-  = image_tag @blog.image, class: "blog__img"
+  = image_tag @blog.image, class: "blog__bg"
 .blog__show
   .container
         .row
           h2.text-center.section__title
             = @blog.title
           p.date__txt.text-center
-            = @blog.created_at
+            = l @blog.created_at, format: :default
             |　
             = link_to root_path, class:"category__txt" do
                 = @blog.tag
-          .blog__cont
-            == @blog.content
+          - if admin_signed_in?
+            p.text-center
+              = link_to "編集",edit_blog_path(@blog.id)
+              | /
+              = link_to "削除", blog_path(@blog.id), method: :delete, "data-confirm" => '本当によろしいですか？'
+          .blog__border
+          .blog__cont.standard__txt
+              == @blog.content
+          .blog__border

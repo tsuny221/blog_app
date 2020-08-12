@@ -1,17 +1,7 @@
  .container
         .row.blog__index
           h2.text-center.section__title blog
-          .blog__card__flex
-            - @blogs.each do |blog|
-              .card
-                .card-body
-                  =link_to blog_path(blog.id), class:"card-img-top" do
-                    = image_tag blog.image, class: "blog__card__img"
-                  .card-body
-                    p.card-text
-                      = link_to blog_path(blog.id), class:"" do
-                        = blog.title
-                    p.date__txt
-                      = blog.created_at
-                    = link_to root_path, class:"category__txt" do
-                       = blog.tag
+          - if admin_signed_in?
+            p.text-center
+              = link_to "新規作成",new_blog_path
+          = render 'blogs/list', blogs: @blogs
