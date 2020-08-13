@@ -11,7 +11,11 @@
                           = blog.title
                       p.date__txt
                         = l blog.created_at, format: :default
-                      = link_to root_path, class:"category__txt" do
+                      = link_to tag_blog_path(blog, tag: blog.tag), class:"category__txt" do
                         = blog.tag
+
 - else
   p.text-center.standard__txt ブログがありません
+
+.text-center
+  = paginate blogs, class: "paginate"

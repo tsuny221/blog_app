@@ -8,8 +8,8 @@
           p.date__txt.text-center
             = l @blog.created_at, format: :default
             |　
-            = link_to root_path, class:"category__txt" do
-                = @blog.tag
+            = link_to tag_blog_path(@blog, tag: @blog.tag), class:"category__txt" do
+                        = @blog.tag
           - if admin_signed_in?
             p.text-center
               = link_to "編集",edit_blog_path(@blog.id)

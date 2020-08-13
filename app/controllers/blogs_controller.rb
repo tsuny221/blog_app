@@ -41,6 +41,10 @@ class BlogsController < ApplicationController
       render :index
     end
   end
+  def tag
+    @tag_blogs = Blog.where(tag: params[:tag])
+    @tag = params[:tag]
+  end
 
   private
 

@@ -54,7 +54,7 @@ li {
   list-style: none;
 }
 section {
-  margin: 5%;
+  margin: 10% 5%;
 }
 .standard__txt {
   font-size: 1em;
@@ -146,9 +146,9 @@ header {
 }
 .blog__card__flex {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 5%;
+  margin: 5% 0px;
 }
 .card {
   width: 20rem;
@@ -198,6 +198,12 @@ header {
   height: 100%;
   object-fit: cover;
 }
+.blog__return {
+  margin: 10%;
+}
+.return__btn {
+  border-bottom: 1px solid #333;
+}
 /*------------profile-------------*/
 .profile__cont {
   width: 70%;
@@ -216,14 +222,43 @@ header {
 .profile__txt {
   text-align: center;
 }
+/*----------ページネーション------------*/
+
+/*ページネーション自体のデザイン*/
+.pagination > li > a {
+  border: none; /*枠線をなくす*/
+  color: #696969; /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination > .active > a {
+  background: #dbd1c8; /*背景の色を変える*/
+  border-radius: 15px; /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination > li > a:hover {
+  border-radius: 15px;
+  background-color: #e8e8e8 !important;
+  color: #333;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
 
 /*------------フォーム全般-------------*/
-.form {
-  margin-top: 10%;
-}
+
 .form__cont {
   max-width: 600px;
-  margin-top: 10px;
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -401,6 +436,9 @@ textarea:read-only {
   }
 }
 @media (max-width: 700px) {
+  .card {
+    width: 100%;
+  }
   /*------------ハンバーガメニュー-------------*/
   #nav {
     display: none;

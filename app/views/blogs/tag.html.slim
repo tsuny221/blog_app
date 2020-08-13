@@ -1,0 +1,10 @@
+.container
+        .row.blog__index
+          h2.text-center.section__title
+            = @tag
+          - if admin_signed_in?
+            p.text-center
+              = link_to "新規作成",new_blog_path
+          = render 'blogs/list', blogs: @tag_blogs
+          .blog__return
+             = link_to "ブログ一覧へ", blogs_path, class:"standard__txt return__btn"
