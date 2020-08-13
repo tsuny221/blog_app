@@ -9,7 +9,4 @@
         .row
           h2.text-center.section__title blog
           = render 'blogs/list', blogs: @blogs
-    section.contact
-      .container
-        .row
-          h2.text-center.section__title contact
+    = render 'homes/contact_form', contact: @contact

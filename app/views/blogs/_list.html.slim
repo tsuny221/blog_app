@@ -1,14 +1,17 @@
-.blog__card__flex
-            - blogs.each do |blog|
-              .card
-                .card-body
-                  =link_to blog_path(blog.id), class:"card-img-top" do
-                    = image_tag blog.image, class: "blog__card__img"
+-if blogs.present?
+  .blog__card__flex
+              - blogs.each do |blog|
+                .card
                   .card-body
-                    p.card-text
-                      = link_to blog_path(blog.id), class:"standard__txt" do
-                        = blog.title
-                    p.date__txt
-                      = l blog.created_at, format: :default
-                    = link_to root_path, class:"category__txt" do
-                       = blog.tag
+                    =link_to blog_path(blog.id), class:"card-img-top" do
+                      = image_tag blog.image, class: "blog__card__img"
+                    .card-body
+                      p.card-text
+                        = link_to blog_path(blog.id), class:"standard__txt" do
+                          = blog.title
+                      p.date__txt
+                        = l blog.created_at, format: :default
+                      = link_to root_path, class:"category__txt" do
+                        = blog.tag
+- else
+  p.text-center.standard__txt ブログがありません

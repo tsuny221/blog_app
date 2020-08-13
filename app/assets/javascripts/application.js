@@ -54,4 +54,8 @@ $(function () {
     pauseOnHover: false,
     pauseOnDotsHover: false,
   });
+
+  $("#nav-toggle").on("click", function () {
+    $("body").toggleClass("open");
+  });
 });

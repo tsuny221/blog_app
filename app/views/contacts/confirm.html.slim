@@ -1,0 +1,29 @@
+section.contact
+      .container
+        .row
+          h2.text-center.section__title contact
+          .form__cont
+            = form_with model: @contact, local: true do |f|
+              = render "layouts/errors", obj: @contact
+              .field
+                  .form__label.standard__txt
+                    span.form__item 必須
+                    = f.label :name
+                  = f.text_field :name, class: "form__item_input", :placeholder => "例）山田太郎", readonly: true
+              .field
+                  .form__label.standard__txt
+                    span.form__item 必須
+                    = f.label :phone_number
+                  = f.text_field :phone_number, class:"form__item_input", :placeholder => "例）1110001", readonly: true
+              .field
+                  .form__label.standard__txt
+                    span.form__item 必須
+                    = f.label :email
+                  = f.text_field :email, class:"form__item_input", :placeholder => "例）example@gmail.com", readonly: true
+              .field
+                  .form__label.standard__txt
+                    span.form__item 必須
+                    = f.label :message
+                  = f.text_area :message, class:"form__item_textarea", readonly: true
+              .actions
+                  = f.submit "送信", class:"form__btn standard__txt"
