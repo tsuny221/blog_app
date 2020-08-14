@@ -13,7 +13,7 @@ header
             li.header__nav__list
                 = link_to 'blog', blogs_path, class:"header__nav__list__link"
             li.header__nav__list
-                = link_to 'contact', root_path, class:"header__nav__list__link"
+                = link_to 'contact', root_path(anchor: 'contact'),class:"header__nav__list__link"
             -if admin_signed_in?
               li.header__nav__list
                 = link_to "logout", destroy_admin_session_path, method: :delete
@@ -38,7 +38,7 @@ header
               li
                   = link_to 'BLOG', blogs_path
               li
-                  = link_to 'CONTACT', root_path
+                  = link_to 'CONTACT', root_path(anchor: 'contact')
               -if admin_signed_in?
                 li
                   = link_to "LOGOUT", destroy_admin_session_path, method: :delete

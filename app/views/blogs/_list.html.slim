@@ -1,10 +1,10 @@
 -if blogs.present?
   .blog__card__flex
               - blogs.each do |blog|
-                .card
+                .card.fadein
                   .card-body
                     =link_to blog_path(blog.id), class:"card-img-top" do
-                      = image_tag blog.image, class: "blog__card__img"
+                      = image_tag blog.image, class: "blog__card__img hover__img"
                     .card-body
                       p.card-text
                         = link_to blog_path(blog.id), class:"standard__txt" do
